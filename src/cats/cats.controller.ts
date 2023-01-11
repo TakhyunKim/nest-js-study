@@ -22,7 +22,6 @@ export class CatsController {
 
   @Get(':id')
   getOneCat(@Param('id', ParseIntPipe) param: number) {
-    console.log(param, typeof param);
     return 'one cat';
   }
 
