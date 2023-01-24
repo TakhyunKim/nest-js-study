@@ -10,6 +10,7 @@ import {
 } from '@nestjs/common';
 
 import { CatsService } from './cats.service';
+import { PositiveIntPipe } from 'src/common/pipes/positiveInt.pipe';
 
 @Controller('cats')
 export class CatsController {
@@ -21,7 +22,7 @@ export class CatsController {
   }
 
   @Get(':id')
-  getOneCat(@Param('id', ParseIntPipe) param: number) {
+  getOneCat(@Param('id', ParseIntPipe, PositiveIntPipe) param: number) {
     return 'one cat';
   }
 
